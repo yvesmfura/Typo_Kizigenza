@@ -55,7 +55,7 @@ function TypingChallenge() {
     const value = e.target.value;
     setInputValue(value);
 
-    if (value.trim() === currentWord) {
+    if (value.trim().toLowerCase() === currentWord.toLowerCase()) {
       setWordsTyped(wordsTyped + 1);
       setInputValue('');
       generateWord();
