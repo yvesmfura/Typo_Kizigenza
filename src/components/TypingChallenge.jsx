@@ -103,7 +103,7 @@ function TypingChallenge() {
     switch (level) {
       case 1: return 'Beginner Typist';
       case 2: return 'Good Typist';
-      case 3: return 'Intermediate Typist';
+      case 3: return 'Very Good Typist';
       case 4: return 'Expert Typist';
       case 5: return 'Highly Skilled Typist';
       default: return '';
@@ -179,12 +179,12 @@ function TypingChallenge() {
             <span className="close-button" onClick={toggleAbout}>&times;</span>
             <h3>About Typo KIZIGENZA</h3>
             <p><strong>How to Play:</strong> Type the words displayed on the screen as fast as you can. Each correct word will generate a new word to type.</p>
-            <p><strong>Aim of the Game:</strong> Reach the target number of words within the given time to progress through the levels. Try to reach Level 5 and become a Typing Expert!</p>
+            <p><strong>Aim of the Game:</strong> Reach the target number of words within the given time to progress through the levels. Try to reach Level 5 and become a Highly skilled typist!</p>
             <p><strong>Levels:</strong></p>
             <ul>
               <li>Level 1: Beginner Typist - Type at least 10 words in 60 seconds.</li>
               <li>Level 2: Good Typist - Type at least 20 words in 60 seconds.</li>
-              <li>Level 3: Intermediate Typist - Type at least 30 words in 60 seconds.</li>
+              <li>Level 3: Very Good Typist - Type at least 30 words in 60 seconds.</li>
               <li>Level 4: Expert Typist - Type at least 40 words in 60 seconds.</li>
               <li>Level 5: Highly Skilled Typist - Type at least 50 words in 60 seconds.</li>
             </ul>
