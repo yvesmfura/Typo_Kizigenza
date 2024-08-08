@@ -76,13 +76,12 @@ function TypingChallenge() {
   };
 
   const resetGame = () => {
-    setLevel(1);
     setWordsTyped(0);
     setTimeLeft(60);
     setInputValue('');
     setGameOver(false);
     setLevelCompleted(false);
-    setGameStarted(false);
+    setGameStarted(true); // Keep the user at the current level
   };
 
   const startGame = () => {
@@ -100,6 +99,17 @@ function TypingChallenge() {
     }
   };
 
+  const getLevelDescription = (level) => {
+    switch (level) {
+      case 1: return 'Beginner Typist';
+      case 2: return 'Good Typist';
+      case 3: return 'Intermediate Typist';
+      case 4: return 'Expert Typist';
+      case 5: return 'Highly Skilled Typist';
+      default: return '';
+    }
+  };
+
   const toggleAbout = () => {
     setShowAbout(!showAbout);
   };
@@ -114,7 +124,7 @@ function TypingChallenge() {
         </div>
       ) : (
         <>
-          <p>Level: {level} {level === 1 ? '(Beginner)' : level === 3 ? '(Intermediate)' : level === 5 ? '(Expert)' : ''}</p>
+          <p>Level: {level} - {getLevelDescription(level)}</p>
           <p>Minimum Words to Pass: {getWordTarget(level)}</p>
           {gameOver ? (
             <div>
@@ -170,6 +180,14 @@ function TypingChallenge() {
             <h3>About Typo KIZIGENZA</h3>
             <p><strong>How to Play:</strong> Type the words displayed on the screen as fast as you can. Each correct word will generate a new word to type.</p>
             <p><strong>Aim of the Game:</strong> Reach the target number of words within the given time to progress through the levels. Try to reach Level 5 and become a Typing Expert!</p>
+            <p><strong>Levels:</strong></p>
+            <ul>
+              <li>Level 1: Beginner Typist - Type at least 10 words in 60 seconds.</li>
+              <li>Level 2: Good Typist - Type at least 20 words in 60 seconds.</li>
+              <li>Level 3: Intermediate Typist - Type at least 30 words in 60 seconds.</li>
+              <li>Level 4: Expert Typist - Type at least 40 words in 60 seconds.</li>
+              <li>Level 5: Highly Skilled Typist - Type at least 50 words in 60 seconds.</li>
+            </ul>
           </div>
         </div>
       )}
