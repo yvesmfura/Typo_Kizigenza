@@ -32,7 +32,7 @@ function TypingChallenge() {
   }, [level, gameStarted]);
 
   useEffect(() => {
-    if (timeLeft > 0 && !levelCompleted && !gameOver) {
+    if (timeLeft > 0 && !levelCompleted && !gameOver && gameStarted && !showAbout) {
       const timerId = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
       return () => clearTimeout(timerId);
     } else if (timeLeft === 0) {
@@ -42,7 +42,7 @@ function TypingChallenge() {
         setGameOver(true);
       }
     }
-  }, [timeLeft, levelCompleted, gameOver]);
+  }, [timeLeft, levelCompleted, gameOver, gameStarted, showAbout]);
 
   const generateWord = () => {
     if (words.length > 0) {
@@ -85,7 +85,9 @@ function TypingChallenge() {
   };
 
   const startGame = () => {
-    setGameStarted(true);
+    if (!showAbout) {
+      setGameStarted(true);
+    }
   };
 
   const getWordTarget = (level) => {
@@ -112,6 +114,9 @@ function TypingChallenge() {
 
   const toggleAbout = () => {
     setShowAbout(!showAbout);
+    if (gameStarted) {
+      setGameStarted(false);
+    }
   };
 
   return (
