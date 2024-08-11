@@ -1,6 +1,5 @@
 # Typo KIZIGENZA
 
-[![Vercel](https://vercelbadge.vercel.app/api/kizigenza/typo-kizigenza)](https://typo-kizigenza.vercel.app)
 
 Typo KIZIGENZA is a typing challenge game designed to help users improve their typing speed and accuracy through a series of progressively challenging levels. The game is built using React and is hosted on Vercel.
 
